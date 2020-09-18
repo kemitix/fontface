@@ -1,21 +1,35 @@
 package net.kemitix.fontface;
 
+import lombok.*;
+
 import java.net.URI;
 
-public interface FontFace {
-    static FontFace of(
+@Getter
+@With
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
+public class FontFace {
+
+    private URI fontLocation;
+    private int size;
+    private String colour;
+    private String shadowColour;
+    private int shadowOffsetX;
+    private int shadowOffsetY;
+
+    public static FontFace of(
             URI fontUri,
             int size,
             String colour,
             int shadowOffsetX,
             int shadowOffsetY
     ) {
-        final String shadowColour = FontFaceImpl.shadowColour(colour);
-        return new FontFaceImpl(fontUri, size, colour,
+        final String shadowColour = FontFace.shadowColour(colour);
+        return new FontFace(fontUri, size, colour,
                 shadowColour, shadowOffsetX, shadowOffsetY);
     }
 
-    static FontFace of(
+    public static FontFace of(
             URI fontUri,
             int size,
             String colour
@@ -23,21 +37,14 @@ public interface FontFace {
         return of(fontUri, size, colour, 0, 0);
     }
 
-    URI getFontLocation();
+    static String shadowColour(final String colour) {
+        switch (colour) {
+            case "white":
+            case "yellow":
+                return "black";
+            default:
+                return "white";
+        }
+    }
 
-    int getSize();
-
-    String getColour();
-
-    String getShadowColour();
-
-    int getShadowOffsetX();
-
-    int getShadowOffsetY();
-
-    FontFace withSize(int size);
-    FontFace withColour(String colour);
-    FontFace withShadowColour(String colour);
-    FontFace withShadowOffsetX(int offset);
-    FontFace withShadowOffsetY(int offsetY);
 }
