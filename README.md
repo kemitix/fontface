@@ -14,10 +14,10 @@ https://oss.sonatype.org/content/repositories/releases/net/kemitix/fontface/)
 https://img.shields.io/maven-central/v/net.kemitix/fontface.svg?style=for-the-badge)](
 https://search.maven.org/artifact/net.kemitix/fontface)
 
-Extracted from [Clover](/kemitix/clover) to allow re-use.
+Extracted from [Clover](https://github.com/kemitix/clover) to allow re-use.
 It currently has some hold-overs from being implemented for that single use-case.
 Refinement, and making it more generally suitable, will come as it is used in 
-other projects, (e.g. [Binder](/kemitix/binder)). 
+other projects, (e.g. [Binder](https://github.com/kemitix/binder)). 
 
 - `FontFace` - `Font` wrapper
 - `FontCache` - a cache of `FontFace` instances
