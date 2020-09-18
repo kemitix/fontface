@@ -18,7 +18,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 @ExtendWith(MockitoExtension.class)
-public class FontCacheImplTest {
+public class FontCacheTest {
 
     private final URI fontLocation = new File("font.otf").toURI();
     private final String colour = "colour";
@@ -36,7 +36,7 @@ public class FontCacheImplTest {
     @DisplayName("When cache is empty then load font")
     public void emptyCache() {
         //given
-        final FontCacheImpl fontCache = new FontCacheImpl(fontLoader);
+        final FontCache fontCache = new FontCache(fontLoader);
         final FontFace fontFace = FontFace.of(fontLocation, 26, colour);
         //when
         fontCache.loadFont(fontFace);
@@ -48,7 +48,7 @@ public class FontCacheImplTest {
     @DisplayName("When cache has font, but not size, then don't reload font")
     public void notInSize() {
         //given
-        final FontCacheImpl fontCache = new FontCacheImpl(fontLoader);
+        final FontCache fontCache = new FontCache(fontLoader);
         final FontFace previousFontFace = FontFace.of(fontLocation, 16, colour);
         fontCache.loadFont(previousFontFace);
         final FontFace fontFace = FontFace.of(fontLocation, 26, colour);
@@ -63,7 +63,7 @@ public class FontCacheImplTest {
     @DisplayName("When cache has font in size, then don't load font")
     public void available() {
         //given
-        final FontCacheImpl fontCache = new FontCacheImpl(fontLoader);
+        final FontCache fontCache = new FontCache(fontLoader);
         final FontFace fontFace = FontFace.of(fontLocation, 26, colour);
         //when
         fontCache.loadFont(fontFace);
