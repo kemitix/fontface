@@ -19,7 +19,7 @@
         <kemitix-tiles.version>2.10.0</kemitix-tiles.version>
         <lombok.version>1.18.12</lombok.version>
         <junit-jupiter.version>5.7.0</junit-jupiter.version>
-        <mockito-junit-jupiter.version>3.5.10</mockito-junit-jupiter.version>
+        <mockito-junit-jupiter.version>3.5.11</mockito-junit-jupiter.version>
         <assertj-core.version>3.17.2</assertj-core.version>
     </properties>
 
