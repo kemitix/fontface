@@ -21,6 +21,18 @@ public class FontFace {
             URI fontUri,
             int size,
             String colour,
+            String shadowColour,
+            int shadowOffsetX,
+            int shadowOffsetY
+    ) {
+        return new FontFace(fontUri, size, colour,
+                shadowColour, shadowOffsetX, shadowOffsetY);
+    }
+
+    public static FontFace of(
+            URI fontUri,
+            int size,
+            String colour,
             int shadowOffsetX,
             int shadowOffsetY
     ) {
