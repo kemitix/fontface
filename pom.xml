@@ -15,7 +15,7 @@
     <version>1.1.2</version>
 
     <properties>
-        <tiles-maven-plugin.version>2.26</tiles-maven-plugin.version>
+        <tiles-maven-plugin.version>2.28</tiles-maven-plugin.version>
         <kemitix-tiles.version>2.10.0</kemitix-tiles.version>
         <lombok.version>1.18.22</lombok.version>
         <junit-jupiter.version>5.8.2</junit-jupiter.version>
